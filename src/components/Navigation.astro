@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import CurrentTime from './CurrentTime';
+import NavLink from './NavLink.astro';
+import { Button, buttonVariants } from './ui/Button';
+import logo from '@/images/logo.svg';
+const linkedIn = "https://linkedin.com/in/ore-adeleye-j";
+---
+<nav class="flex mx-24 my-8 justify-between items-center">
+    <div class="flex items-center gap-16">
+        <Image src={ logo } height={ 75 } alt="Logo"/>
+        <ul class="flex gap-8">
+            <NavLink href="#">About Me</NavLink>
+            <NavLink href="#">Experience</NavLink>
+            <NavLink href="#">Projects</NavLink>
+            <NavLink href="#">Services</NavLink>
+            <NavLink href="#">Contact</NavLink>
+        </ul>
+    </div>
+    <div class="flex items-center gap-16">
+        <div class="font-bold">
+            <div class="text-neutral-400">Nigeria</div>
+            <CurrentTime client:load/>
+        </div>
+        <a href={linkedIn} class={buttonVariants()} target="_blank">Talk with me</a>
+    </div>
+
+</nav>
