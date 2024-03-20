@@ -1,15 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import CurrentTime from './CurrentTime';
+import { clsx } from 'clsx';
+import { linkedIn } from '../constants/links';
+import NavMenu from './NavMenu';
+import NigerianTime from './NigerianTime';
 import NavLink from './NavLink.astro';
-import { Button, buttonVariants } from './ui/Button';
+import { buttonVariants } from './ui/Button';
 import logo from '@/images/logo.svg';
-const linkedIn = "https://linkedin.com/in/ore-adeleye-j";
 ---
-<nav class="flex mx-24 my-8 justify-between items-center">
+<nav class="flex mx-6 lg:mx-24 my-8 justify-between items-center">
     <div class="flex items-center gap-16">
         <Image src={ logo } height={ 75 } alt="Logo"/>
-        <ul class="flex gap-8">
+        <ul class="hidden gap-8 lg:flex">
             <NavLink href="#">About Me</NavLink>
             <NavLink href="#">Experience</NavLink>
             <NavLink href="#">Projects</NavLink>
@@ -20,9 +22,9 @@ const linkedIn = "https://linkedin.com/in/ore-adeleye-j";
     <div class="flex items-center gap-16">
         <div class="font-bold">
             <div class="text-neutral-400">Nigeria</div>
-            <CurrentTime client:load/>
+            <NigerianTime client:load/>
         </div>
-        <a href={linkedIn} class={buttonVariants()} target="_blank">Talk with me</a>
+        <a href={linkedIn} class={clsx(buttonVariants(), 'hidden lg:inline-flex')} target="_blank">Talk with me</a>
     </div>
-
+    <NavMenu client:idle/>
 </nav>
