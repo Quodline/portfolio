@@ -1,30 +1,36 @@
 ---
-import { Image } from 'astro:assets';
-import { clsx } from 'clsx';
-import { linkedIn } from '@/constants/links';
-import NavMenu from './navigation/NavMenu';
-import NigerianTime from './navigation/NigerianTime';
-import NavLink from './navigation/NavLink.astro';
-import { buttonVariants } from '@/components/ui/Button';
-import logo from '@/images/logo.svg';
+import { Image } from "astro:assets";
+import { clsx } from "clsx";
+import { linkedIn } from "@/constants/links";
+import NavMenu from "./navigation/NavMenu";
+import NigerianTime from "./navigation/NigerianTime";
+import NavLink from "./navigation/NavLink.astro";
+import { buttonVariants } from "@/components/ui/Button";
+import logo from "@/images/logo.svg";
 ---
+
 <nav class="flex mx-6 lg:mx-24 my-8 justify-between items-center">
-    <div class="flex items-center gap-16">
-        <Image src={ logo } height={ 75 } alt="Logo"/>
-        <ul class="hidden gap-8 lg:flex">
-            <NavLink href="#">About Me</NavLink>
-            <NavLink href="#">Experience</NavLink>
-            <NavLink href="#">Projects</NavLink>
-            <NavLink href="#">Services</NavLink>
-            <NavLink href="#">Contact</NavLink>
-        </ul>
+  <div class="flex items-center gap-16">
+    <Image src={logo} height={75} alt="Logo" />
+    <ul class="hidden gap-8 lg:flex">
+      <NavLink href="#">About Me</NavLink>
+      <NavLink href="#">Experience</NavLink>
+      <NavLink href="#">Projects</NavLink>
+      <NavLink href="#">Services</NavLink>
+      <NavLink href="#">Contact</NavLink>
+    </ul>
+  </div>
+  <div class="flex items-center gap-8 xl:gap-16">
+    <div class="font-bold">
+      <div class="text-neutral-400">Nigeria</div>
+      <NigerianTime client:load />
     </div>
-    <div class="flex items-center gap-8 xl:gap-16">
-        <div class="font-bold">
-            <div class="text-neutral-400">Nigeria</div>
-            <NigerianTime client:load/>
-        </div>
-        <a href={linkedIn} class={clsx(buttonVariants(), 'hidden lg:inline-flex')} target="_blank">Talk with me</a>
-    </div>
-    <NavMenu client:idle/>
+    <a
+      href={linkedIn}
+      class={clsx(buttonVariants(), "hidden lg:inline-flex")}
+      target="_blank"
+      >Talk with me
+    </a>
+  </div>
+  <NavMenu client:idle />
 </nav>

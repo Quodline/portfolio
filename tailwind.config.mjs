@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -55,7 +55,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['Manrope Variable', ...defaultTheme.fontFamily.sans],
+        sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -74,4 +74,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
