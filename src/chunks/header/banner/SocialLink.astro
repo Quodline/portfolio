@@ -1,0 +1,10 @@
+---
+import { clsx } from 'clsx';
+import { buttonVariants } from '@/components/ui/Button';
+const props = Astro.props;
+---
+<a {...props}
+   class={ clsx(buttonVariants({ 'variant': 'outline', size: 'icon' }), '!rounded-full') }
+   target="_blank">
+    <slot/>
+</a>
