@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import { clsx } from 'clsx';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { buttonVariants } from '@/components/ui/Button';
+import { DemoProject } from './types';
+const project = Astro.props as DemoProject;
+---
+
+<Card className="flex flex-col justify-between">
+  <CardHeader>
+    <CardTitle>{project.title}</CardTitle>
+    <CardDescription>{project.industry}</CardDescription>
+    <CardDescription className="font-semibold text-neutral-500">
+      {project.year}
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>{project.description}</p>
+  </CardContent>
+  {
+    project.github && (
+      <CardFooter>
+        <div class="flex flex-1 justify-end gap-4">
+          <a class={buttonVariants()} href={project.github} target="_blank">
+            GitHub
+          </a>
+          {project.link && (
+            <a class={buttonVariants()} href={project.link} target="_blank">
+              Live
+            </a>
+          )}
+        </div>
+      </CardFooter>
+    )
+  }
+</Card>

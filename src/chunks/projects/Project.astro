@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { clsx } from 'clsx';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+const { link, thumb, title, industry, year, description } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  class="flex rounded-lg shadow-2xl hover:shadow-none"
+>
+  <Card>
+    <CardHeader>
+      <Image
+        src={thumb}
+        alt={`${title} screenshots`}
+        class="mb-8 rounded border"
+      />
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{industry}</CardDescription>
+      <CardDescription className="font-semibold text-neutral-500">
+        {year}
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p>{description}</p>
+    </CardContent>
+  </Card>
+</a>

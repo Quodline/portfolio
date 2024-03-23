@@ -1,0 +1,19 @@
+---
+import { Github, Linkedin, Twitter } from 'lucide-react';
+import { github, linkedIn, twitter } from '../constants/links';
+import SocialLink from './header/banner/SocialLink.astro';
+---
+
+<footer
+  id="footer"
+  class="flex flex-col items-center gap-8 bg-neutral-100 px-6 py-24 lg:py-48"
+>
+  <p>Have a project?</p>
+  <h2 class="text-4xl font-bold">Let us collaborate</h2>
+  <div class="flex gap-8">
+    <SocialLink href={github} title="GitHub"><Github /></SocialLink>
+    <SocialLink href={linkedIn} title="LinkedIn"><Linkedin /></SocialLink>
+    <SocialLink href={twitter} title="Twitter"><Twitter /></SocialLink>
+  </div>
+  <p>&copy; Oreoluwa Adeleye</p>
+</footer>

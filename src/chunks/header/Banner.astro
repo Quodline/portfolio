@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import avatar from '@/images/avatar.png';
 import { linkedIn } from '@/constants/links';
+import { github, twitter } from '../../constants/links';
 import SocialLink from './banner/SocialLink.astro';
 import { buttonVariants } from '@/components/ui/Button';
 import { Github, Linkedin, Twitter } from 'lucide-react';
@@ -32,9 +33,9 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
     <div
       class="flex flex-1 items-end justify-center gap-8 pb-[20%] lg:flex-grow-0 lg:justify-start lg:pb-6"
     >
-      <a href="#" class={buttonVariants({ size: 'lg' })} target="_blank"
-        >See my works</a
-      >
+      <a href="/#projects" class={buttonVariants({ size: 'lg' })}>
+        See my works
+      </a>
       <a
         href={linkedIn}
         class={buttonVariants({ variant: 'outline', size: 'lg' })}
@@ -45,8 +46,8 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
     </div>
   </div>
   <div class="absolute right-8 flex flex-col gap-4">
-    <SocialLink href="#" title="GitHub"><Github /></SocialLink>
-    <SocialLink href="#" title="LinkedIn"><Linkedin /></SocialLink>
-    <SocialLink href="#" title="Twitter"><Twitter /></SocialLink>
+    <SocialLink href={github} title="GitHub"><Github /></SocialLink>
+    <SocialLink href={linkedIn} title="LinkedIn"><Linkedin /></SocialLink>
+    <SocialLink href={twitter} title="Twitter"><Twitter /></SocialLink>
   </div>
 </section>

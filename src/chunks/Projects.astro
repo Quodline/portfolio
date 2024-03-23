@@ -1,0 +1,20 @@
+---
+import { demoProjects, selectedProjects } from './projects/projects';
+import Demo from './projects/Demo.astro';
+import Project from './projects/Project.astro';
+---
+
+<section id="projects" class="flex flex-col gap-16 px-6 py-24 lg:px-24">
+  <div>
+    <h2 class="text-2xl font-semibold">Selected Projects</h2>
+    <div class="grid gap-8 py-8 lg:grid-cols-3">
+      {selectedProjects.map((project) => <Project {...project} />)}
+    </div>
+  </div>
+  <div>
+    <h2 class="text-2xl font-semibold">Demos (Proofs of Concept)</h2>
+    <div class="grid gap-8 py-8 lg:grid-cols-3">
+      {demoProjects.map((project) => <Demo {...project} />)}
+    </div>
+  </div>
+</section>
