@@ -1,7 +1,73 @@
 ---
+import { Image } from 'astro:assets';
+import amazin from '@/icons/amazin.svg';
+import upwork from '@/icons/upwork.svg';
+import trivox from '@/icons/trivox.svg';
+import hackerrank from '@/icons/hackerrank.svg';
+import emmersion from '@/icons/emmersion.svg';
+import Certificate from './experience/Certificate.astro';
+import ExperienceItem from './experience/ExperienceItem.astro';
 
+const experiences = [
+  {
+    logo: amazin,
+    position: 'Senior Frontend Developer',
+    company: 'Amazin Trips',
+    start: 'November 2023',
+    end: 'Present',
+  },
+  {
+    logo: trivox,
+    position: 'Software Engineer',
+    company: 'Trivox',
+    start: 'January 2021',
+    end: 'November 2023',
+    imgFilter: 'invert grayscale',
+  },
+  {
+    logo: upwork,
+    position: 'Full Stack Developer',
+    company: 'Freelance (Upwork)',
+    start: 'August 2019',
+    end: 'January 2021',
+  },
+];
+
+const certificates = [
+  {
+    link: 'https://drive.google.com/file/d/1o5sIoZeWH-jHPMqbaghIvcpxSe4E5Ejp/view?usp=sharing',
+    title: 'English Speaking',
+    provider: 'Emmersion',
+    logo: emmersion,
+  },
+  {
+    link: 'https://www.hackerrank.com/certificates/42427ecd9038',
+    title: 'Problem Solving',
+    provider: 'HackerRank',
+    logo: hackerrank,
+  },
+  {
+    link: 'https://www.hackerrank.com/certificates/90fb18ee0998',
+    title: 'React',
+    provider: 'HackerRank',
+    logo: hackerrank,
+  },
+];
 ---
 
-<section class="flex mx-6 lg:mx-24 my-8">
-  <h2>Working Experience</h2>
+<section
+  class="flex flex-col gap-8 bg-neutral-100 px-6 py-24 lg:flex-row lg:gap-32 lg:px-24"
+>
+  <div class="lg:w-[36rem]">
+    <h2 class="text-2xl font-semibold">Working Experience</h2>
+    <div class="py-8">
+      {experiences.map((exp) => <ExperienceItem {...exp} />)}
+    </div>
+  </div>
+  <div class="lg:w-[36rem]">
+    <h2 class="text-2xl font-semibold">Certificates</h2>
+    <div class="py-8">
+      {certificates.map((cert) => <Certificate {...cert} />)}
+    </div>
+  </div>
 </section>

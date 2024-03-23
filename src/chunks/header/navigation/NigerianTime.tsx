@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function NigerianTime() {
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState('');
 
   const updateTime = () => {
-    const time = new Date().toLocaleString("en-US", {
-      hour: "2-digit",
-      minute: "numeric",
-      second: "numeric",
+    const time = new Date().toLocaleString('en-US', {
+      hour: '2-digit',
+      minute: 'numeric',
+      second: 'numeric',
       hour12: true,
-      timeZone: "Africa/Lagos",
+      timeZone: 'Africa/Lagos',
     });
     setTime(time);
   };

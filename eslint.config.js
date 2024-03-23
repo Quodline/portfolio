@@ -1,10 +1,10 @@
-import eslintPluginAstro from "eslint-plugin-astro";
+import eslintPluginAstro from 'eslint-plugin-astro';
 export default [
-  ...eslintPluginAstro.configs["flat/recommended"],
-  ...eslintPluginAstro.configs["flat/jsx-a11y-recommended"],
+  ...eslintPluginAstro.configs['flat/recommended'],
+  ...eslintPluginAstro.configs['flat/jsx-a11y-recommended'],
   {
     rules: {
-      "astro/no-set-html-directive": "error",
+      'astro/no-set-html-directive': 'error',
     },
   },
 ];

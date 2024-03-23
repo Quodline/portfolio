@@ -1,15 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import { clsx } from "clsx";
-import { linkedIn } from "@/constants/links";
-import NavMenu from "./navigation/NavMenu";
-import NigerianTime from "./navigation/NigerianTime";
-import NavLink from "./navigation/NavLink.astro";
-import { buttonVariants } from "@/components/ui/Button";
-import logo from "@/images/logo.svg";
+import { Image } from 'astro:assets';
+import { clsx } from 'clsx';
+import { linkedIn } from '@/constants/links';
+import NavMenu from './navigation/NavMenu';
+import NigerianTime from './navigation/NigerianTime';
+import NavLink from './navigation/NavLink.astro';
+import { buttonVariants } from '@/components/ui/Button';
+import logo from '@/images/logo.svg';
 ---
 
-<nav class="flex mx-6 lg:mx-24 my-8 justify-between items-center">
+<nav class="mx-6 my-8 flex items-center justify-between lg:mx-24">
   <div class="flex items-center gap-16">
     <Image src={logo} height={75} alt="Logo" />
     <ul class="hidden gap-8 lg:flex">
@@ -27,7 +27,7 @@ import logo from "@/images/logo.svg";
     </div>
     <a
       href={linkedIn}
-      class={clsx(buttonVariants(), "hidden lg:inline-flex")}
+      class={clsx(buttonVariants(), 'hidden lg:inline-flex')}
       target="_blank"
       >Talk with me
     </a>

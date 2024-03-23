@@ -1,14 +1,14 @@
-import { buttonVariants } from "@/components/ui/Button.tsx";
+import { buttonVariants } from '@/components/ui/Button.tsx';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { linkedIn } from "@/constants/links.ts";
-import { AlignJustify } from "lucide-react";
-import type { ReactNode } from "react";
+} from '@/components/ui/dropdown-menu';
+import { linkedIn } from '@/constants/links.ts';
+import { AlignJustify } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
   <a href={href}>
