@@ -23,11 +23,9 @@ export default function NavMenu() {
         <AlignJustify className="h-8 w-8" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="m-2">
-        <NavLink href="#">About Me</NavLink>
-        <NavLink href="#">Experience</NavLink>
-        <NavLink href="#">Projects</NavLink>
-        <NavLink href="#">Services</NavLink>
-        <NavLink href="#">Contact</NavLink>
+        <NavLink href="/#experience">Experience</NavLink>
+        <NavLink href="/#projects">Projects</NavLink>
+        <NavLink href="/#footer">Contact</NavLink>
         <DropdownMenuSeparator />
         <a href={linkedIn} className={buttonVariants()} target="_blank">
           Talk with me
