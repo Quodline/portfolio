@@ -14,7 +14,7 @@ import type { DemoProject } from './types';
 const project = Astro.props as DemoProject;
 ---
 
-<Card className="flex flex-col justify-between">
+<Card className="flex flex-col">
   <CardHeader>
     <CardTitle>{project.title}</CardTitle>
     <CardDescription>{project.industry}</CardDescription>
@@ -22,14 +22,18 @@ const project = Astro.props as DemoProject;
       {project.year}
     </CardDescription>
   </CardHeader>
-  <CardContent>
+  <CardContent className="flex-1">
     <p>{project.description}</p>
   </CardContent>
   {
     project.github && (
       <CardFooter>
         <div class="flex flex-1 justify-end gap-4">
-          <a class={buttonVariants()} href={project.github} target="_blank">
+          <a
+            class={buttonVariants({ variant: 'secondary' })}
+            href={project.github}
+            target="_blank"
+          >
             GitHub
           </a>
           {project.link && (
